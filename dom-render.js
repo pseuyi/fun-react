@@ -1,7 +1,13 @@
 export function renderElement(element) {
   const {type, props, children} = element;
 
-  const domEl = document.createElement(type);
+  if (typeof type === 'function') {
+    return renderElement(type(props));
+  }
+
+  if (typeof type === 'string') {
+    const domEl = document.createElement(type);
+  }
 
   children.forEach(child => {
     if (typeof child === 'string') {
