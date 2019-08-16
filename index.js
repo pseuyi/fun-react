@@ -1,6 +1,5 @@
-import {createElement as e} from './react.js';
-
-import {render, renderElement} from './dom-render.js';
+import {createElement as e} from './lib/react.js';
+import {renderElement, render, useState, useEffect} from './lib/dom-render.js';
 
 //const App = {
 //  type: 'div',
@@ -12,6 +11,36 @@ import {render, renderElement} from './dom-render.js';
 //  ],
 //};
 
+// console.log('App: ', renderElement(App));
+
+// components
+function Counter() {
+  const [value, setValue] = useState(25);
+
+  useEffect(() => {
+  }, [value]);
+
+  const updateCounter = label => {
+
+    if (label === '+') setValue(value + 1);
+    if (label === '-') setValue(value - 1);
+
+    render();
+  };
+
+  return e(
+    'h2',
+    null,
+    'counter: ' + value,
+    e(Button, {label: '+', handleClick: updateCounter}),
+    e(Button, {label: '-', handleClick: updateCounter}),
+  );
+}
+
+function Button({label, handleClick}) {
+  return e('button', {onclick: () => handleClick(label)}, label);
+}
+
 const App = e(
   'div',
   null,
@@ -21,12 +50,8 @@ const App = e(
   Counter(),
 );
 
-console.log('App: ', renderElement(App));
+//() => alert('t(*__*t)')
+
 render(App, document.getElementById('root'));
 
-function Counter() {
-  return e('h2', null, 'counter: ', e(Button, {label: '+'}), Button({label: '-'}));
-}
-function Button({label}) {
-  return e('button', null, label);
-}
+export default App;
