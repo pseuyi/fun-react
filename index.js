@@ -17,8 +17,8 @@ import {renderElement, render, useState, useEffect} from './lib/dom-render.js';
 function Counter() {
   const [value, setValue] = useState(25);
 
-  useEffect(() => {
-  }, [value]);
+	//  useEffect(() => {
+	//  }, [value]);
 
   const updateCounter = label => {
 
@@ -47,7 +47,7 @@ const App = e(
   e('h1', null, 'header'),
   e('button', null, 'button'),
   e('marquee', null, 'do u like my app'),
-  Counter(),
+  e(Counter, null),
 );
 
 //() => alert('t(*__*t)')
