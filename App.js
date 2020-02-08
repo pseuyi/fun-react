@@ -1,4 +1,9 @@
-import ReactDOM from './lib/dom-render.js';
-import App from './index.js';
+import {createElement as e} from './lib/react.js';
 
-ReactDOM.render(App, document.getElementById('root'));
+const App = e('div', null, [
+  e('h1', null, ['header']),
+  e('button', null, ['button']),
+  e('marquee', null, ['do u like my app']),
+]);
+
+export default App;
