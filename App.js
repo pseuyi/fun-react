@@ -1,11 +1,10 @@
 import {createElement as e} from './lib/react.js';
-
-const header = ({title}) => e('h1', null, `name of app: ${title}`);
+import Header from './components/Header.js';
 
 const App = e(
   'div',
   null,
-  e(header, {title: 'hello world'}, ''),
+  e(Header, {title: 'hello world'}, ''),
   e('button', null, 'button'),
   e('marquee', null, 'do u like my app'),
 );
