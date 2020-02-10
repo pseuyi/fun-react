@@ -1,0 +1,23 @@
+{
+  "name": "minus-react",
+  "version": "0.0.1",
+  "description": "react sans react",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && ruby -run -e httpd . -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pseuyi/minus-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pseuyi/minus-react/issues"
+  },
+  "homepage": "https://github.com/pseuyi/minus-react#readme"
+}
