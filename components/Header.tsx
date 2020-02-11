@@ -1,5 +1,9 @@
 import React from '../lib/react.js';
 
-const Header = ({title}) => <h1>name of app: {title}</h1>
+interface HeaderProps{
+  title: string,
+}
+
+const Header = ({title}: HeaderProps) => <h1>name of app: {title}</h1>
 
 export default Header;

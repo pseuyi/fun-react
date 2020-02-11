@@ -1,6 +1,11 @@
 import React from '../lib/react.js';
 
-const Button = ({label, handleClick}) => {
+interface ButtonProps {
+  label: string;
+  handleClick: () => {};
+}
+
+const Button = ({label, handleClick}: ButtonProps) => {
   return <button onClick={handleClick}>{label}</button>;
 };
 
